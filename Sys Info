@@ -1,0 +1,31 @@
+systemd units
+https://www.digitalocean.com/community/tutorials/understanding-systemd-units-and-unit-files
+
+systemd locations
+/lib/systemd/system
+
+#power info
+tlp-stat or tlp stat
+
+#battery:
+/sys/class/power_supply/BAT0/
+
+/sys/class/power_supply/BAT0/status #Charging or Discharging ; may be good for animated wallpapers
+
+Ethernet:
+sudo ethtool -S enp2s0
+
+IP Address(es):
+cat resolv.conf
+
+mem info:
+/proc/meminfo
+MemUsed = Memtotal + Shmem - MemFree - Buffers - Cached - SReclaimable
+
+network interfaces:
+sys/class/net/(interface)/address for mac address
+.../operstate for up or down
+
+/sys/class/net/wlp3s0/statistics
+rx_bytes = received bytes
+tx_bytes = transmitted bytes
