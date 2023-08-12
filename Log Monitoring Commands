@@ -1,0 +1,45 @@
+##Log monitoring scripts
+
+#Track sleep
+sudo cat /var/log/auth.log | grep sleep
+
+#Suspend/Sleep key pressed
+sudo cat /var/log/auth.log | grep Suspend
+
+#lid opened or closed
+sudo cat auth.log | grep Lid
+
+#As root or via sudo, type this to see all failed login attempts
+cat /var/log/auth.log | grep 'sshd.*Invalid'
+
+#If you want to see successful logins, type this
+cat /var/log/auth.log | grep 'sshd.*opened'
+
+#ssh journalctl
+journalctl -u ssh
+
+#Sudo used
+sudo cat /var/log/auth.log | grep "session opened for user root"
+
+sudo cat /var/log/auth.log | grep "session closed for user root"
+
+#login (suspend, Lid opened/closed, etc)
+sudo cat auth.log | grep login
+
+#Failed login attempts
+cat /var/log/faillog
+
+general systemd log
+sudo journalctl
+
+#system boots pg. 57 linx admin handbook
+
+configure journald
+/etc/systemd/journald.cong 
+under Storage attribute,
+
+[Journal]
+Storage=persistent
+
+then use:
+$journal --list-boots
