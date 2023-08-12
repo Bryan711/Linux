@@ -141,6 +141,9 @@ alias newtag='git tag -a'
 # Merge Xresources
 alias merge='xrdb -merge ~/.Xresources'
 
+# xrandr to display outputs 
+alias xrandr-right=xrandr --output HDMI-A-0 --left-of eDP #sets up extra monitor to be on left side
+
 # get error messages from journalctl
 alias jctl="journalctl -p 3 -xb"
 
